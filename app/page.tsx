@@ -99,7 +99,7 @@ export default function ForexCalculator() {
       return
     }
 
-    const { decimals, standardLot } = currencyPairs[selectedPair]
+    const { standardLot } = currencyPairs[selectedPair]
     const pipValue = selectedPair.includes('JPY') ? 0.01 : 0.0001
     const slPips = Math.abs((entry - sl) / pipValue)
     const tpPips = Math.abs((tp - entry) / pipValue)
