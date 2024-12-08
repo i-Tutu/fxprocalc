@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Calculator, DollarSign, Github, RefreshCw } from 'lucide-react'
+import { Calculator, RefreshCw } from 'lucide-react'
 
 const currencyPairs = {
   'EUR/USD': { decimals: 5, standardLot: 100000 },
@@ -15,6 +15,21 @@ const currencyPairs = {
   'USD/CHF': { decimals: 5, standardLot: 100000 },
   'AUD/USD': { decimals: 5, standardLot: 100000 },
   'USD/CAD': { decimals: 5, standardLot: 100000 },
+  'EUR/JPY': { decimals: 3, standardLot: 100000 },
+  'NZD/USD': { decimals: 5, standardLot: 100000 },
+  'GBP/JPY': { decimals: 3, standardLot: 100000 },
+  'EUR/GBP': { decimals: 5, standardLot: 100000 },
+  'EUR/CHF': { decimals: 5, standardLot: 100000 },
+  'EUR/AUD': { decimals: 5, standardLot: 100000 },
+  'AUD/JPY': { decimals: 3, standardLot: 100000 },
+  'EUR/CAD': { decimals: 5, standardLot: 100000 },
+  'AUD/CHF': { decimals: 5, standardLot: 100000 },
+  'CHF/JPY': { decimals: 3, standardLot: 100000 },
+  'CAD/JPY': { decimals: 3, standardLot: 100000 },
+  'NZD/JPY': { decimals: 3, standardLot: 100000 },
+  'GBP/AUD': { decimals: 5, standardLot: 100000 },
+  'GBP/CHF': { decimals: 5, standardLot: 100000 },
+  'XAU/USD': { decimals: 2, standardLot: 100 }
 }
 
 function Header() {
@@ -27,9 +42,9 @@ function Header() {
         </div>
         <nav>
           <ul className="flex space-x-4">
-            <li><a href="#" className="hover:underline">Home</a></li>
-            <li><a href="#" className="hover:underline">About</a></li>
-            <li><a href="#" className="hover:underline">Contact</a></li>
+            {/*<li><a href="#" className="hover:underline">Home</a></li>*/}
+            {/*<li><a href="#" className="hover:underline">About</a></li>*/}
+            {/*<li><a href="#" className="hover:underline">Contact</a></li>*/}
           </ul>
         </nav>
       </div>
@@ -41,17 +56,7 @@ function Footer() {
   return (
     <footer className="bg-gray-100 py-4 mt-8">
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <p className="text-sm text-gray-600">© 2025 FxProCalc. All rights reserved.</p>
-        <div className="flex items-center space-x-4">
-          <a href="#" className="text-gray-600 hover:text-gray-800">
-            <span className="sr-only">GitHub</span>
-            <Github className="h-6 w-6" />
-          </a>
-          <a href="#" className="text-gray-600 hover:text-gray-800">
-            <span className="sr-only">Donate</span>
-            <DollarSign className="h-6 w-6" />
-          </a>
-        </div>
+        <p className="text-sm text-gray-600">© 2025 FxProCalc - Nadomso Global. All rights reserved.</p>
       </div>
     </footer>
   )
