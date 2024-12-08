@@ -143,7 +143,7 @@ export default function ForexCalculator() {
       <Header />
       <main className="flex-grow flex items-center justify-center px-4 py-8">
         <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-          <h2 className="text-2xl font-bold mb-6 text-center text-black">Calculate Forex Levels</h2>
+          <h2 className="text-2xl font-bold mb-6 text-center text-black">Calculate Forex P & L</h2>
           <div className="space-y-4">
             <div>
               <Label className="text-black" htmlFor="currencyPair">Currency Pair</Label>
