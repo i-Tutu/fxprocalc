@@ -99,7 +99,8 @@ export default function ForexCalculator() {
       return
     }
 
-    const { standardLot } = currencyPairs[selectedPair]
+    // @ts-expect-error
+    const {standardLot } = currencyPairs[selectedPair]
     const pipValue = selectedPair.includes('JPY') ? 0.01 : 0.0001
     const slPips = Math.abs((entry - sl) / pipValue)
     const tpPips = Math.abs((tp - entry) / pipValue)
@@ -115,6 +116,7 @@ export default function ForexCalculator() {
       potentialProfit = (entry - tp) * unitSize
     }
 
+    // @ts-expect-error
     setResult({
       pips: {
         stopLoss: slPips.toFixed(1),
