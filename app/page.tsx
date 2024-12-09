@@ -99,7 +99,7 @@ export default function ForexCalculator() {
       return
     }
 
-    // @ts-expect-error
+    // @ts-expect-error: Ignoring type error due to not assignable type null
     const {standardLot } = currencyPairs[selectedPair]
     const pipValue = selectedPair.includes('JPY') ? 0.01 : 0.0001
     const slPips = Math.abs((entry - sl) / pipValue)
@@ -116,7 +116,7 @@ export default function ForexCalculator() {
       potentialProfit = (entry - tp) * unitSize
     }
 
-    // @ts-expect-error
+
     setResult({
       pips: {
         stopLoss: slPips.toFixed(1),
