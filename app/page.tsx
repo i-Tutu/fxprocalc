@@ -73,6 +73,7 @@ type ResultType = {
     potential_profit: string;
   } | null;
 }
+//function
 export default function ForexCalculator() {
   const [entryPrice, setEntryPrice] = useState('')
   const [stopLoss, setStopLoss] = useState('')
