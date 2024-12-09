@@ -62,6 +62,17 @@ function Footer() {
   )
 }
 
+type ResultType = {
+  pips: {
+    stopLoss: string;
+    takeProfit: string;
+  } | null;
+
+  profitLoss: {
+    potential_loss: string;
+    potential_profit: string;
+  } | null;
+}
 export default function ForexCalculator() {
   const [entryPrice, setEntryPrice] = useState('')
   const [stopLoss, setStopLoss] = useState('')
@@ -69,7 +80,11 @@ export default function ForexCalculator() {
   const [volume, setVolume] = useState('')
   const [selectedPair, setSelectedPair] = useState('EUR/USD')
   const [positionType, setPositionType] = useState('buy')
-  const [result, setResult] = useState({ pips: null, profitLoss: null })
+
+  const [result, setResult] = useState<ResultType>({
+    pips: null,
+    profitLoss: null
+  });
   const [error, setError] = useState('')
 
   const calculateLevels = () => {
@@ -126,7 +141,7 @@ export default function ForexCalculator() {
         potential_loss: (-potentialLoss).toFixed(2),
         potential_profit: potentialProfit.toFixed(2)
       }
-    })
+    });
   }
 
   const clearForm = () => {
@@ -139,7 +154,6 @@ export default function ForexCalculator() {
     setResult({ pips: null, profitLoss: null })
     setError('')
   }
-
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
       <Header />
@@ -246,4 +260,4 @@ export default function ForexCalculator() {
       <Footer />
     </div>
   )
-}
+};
